@@ -5,6 +5,9 @@ FROM nginx:alpine
 COPY index.html /usr/share/nginx/html/index.html
 COPY cheeky-fox-with-slingshot.png /usr/share/nginx/html/cheeky-fox-with-slingshot.png
 
+# Set permissions for the web root
+RUN chmod -R 755 /usr/share/nginx/html/
+
 # Expose port 80 for the web server
 EXPOSE 80
 
